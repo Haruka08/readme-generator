@@ -48,6 +48,7 @@ const questions = [
         "GNU GPL v3",
         "BSD 3-Clause License",
         "Mozilla Public Licence 2.0",
+        "No License"
         ]
     },
     {
