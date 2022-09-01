@@ -52,8 +52,8 @@ function renderLicenseSection(data) {
   See the License for the specific language governing permissions and
   limitations under the License.`
   } else if (data.license == "GNU GPL v3"){
+  return `${data.description}
 
-  return `<one line to give the program's name and a brief idea of what it does.>
   Copyright (C) ${data.date} ${data.name}
 
   This program is free software: you can redistribute it and/or modify
