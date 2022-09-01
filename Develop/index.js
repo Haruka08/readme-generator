@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util')
+const util = require('util');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 const writeFileAsync = util.promisify(fs.writeFile)
 
@@ -38,20 +39,26 @@ const questions = [
         name: "instruction"
     },
     {
-        type: "checkbox",
+        type: "list",
         message: "Select the licence for your application?",
-        name: "licence",
+        name: "license",
         choices:[
         "MIT",
-        "Aptache",
-        "GNU",
-        "BSD",
-        "MPL",
-        "AGPL",
-        "ODbL",
-        "ZPL",
-        "MPL"
+        "Apache",
+        "GNU GPL v3",
+        "BSD 3-Clause License",
+        "Mozilla Public Licence 2.0",
         ]
+    },
+    {
+        type: "input",
+        message: "What name is the name of the license holder?",
+        name: "name"
+    },
+    {
+        type: "input",
+        message: "What year was the license obtained?",
+        name: "date"
     },
     {
         type: "input",
@@ -68,33 +75,18 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-        return fs.writeFile(fileName,
-        `# ${data.title} ![]
-        ${data.description}
-        ## Table of Contents
-        - [Descriptions](#descriptions)
-        - [Installation Instructions](#installation)
-        - [Usage Information](#usage)
-        - [Contribution Guidelines](#contribution)
-        - [Test Instructions](#instruction)
+    var readme = generateMarkdown(data);
 
-        ## Installation Instructions
-        ${data.instructions}
-        ## Usage Information
-        ${data.usage}
-        ## Contribution Guidelines
-        ${data.contribution}
-        ## Test Instructions
-        ${data.instructions}
-        ## Licence
-        ${data.licence}
+        function afterWriting (error) {
+            const output = (error) ? 'Error' : 'Success';
+            console.log(output);
+        }
 
-        
-        
-        `, (error) => {
-        const output = (error) ? 'Error' : 'Success';
-        console.log(output);
-    })
+        fs.writeFile(fileName, readme, afterWriting)
+
+        writeFileAsync(fileName, readme)
+        .then(afterWriting)
+
 }
 
 
