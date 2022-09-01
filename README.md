@@ -1,3 +1,10 @@
-# Professional README Generator Starter Code
+# Professional README Generator
+By answering the prompts within terminal using node js, a professional README is generated with the user input.
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+## Links to the webpage and repository
+
+To the sample README file [Sample README](https://haruka08.github.io/readme-generator/Develop/README.md)
+
+To access the GitHub repository use [GitHub Repository readme-generator](https://github.com/Haruka08/readme-generator)
+
+
