@@ -84,9 +84,6 @@ function writeToFile(fileName, data) {
 
         fs.writeFile(fileName, readme, afterWriting)
 
-        writeFileAsync(fileName, readme)
-        .then(afterWriting)
-
 }
 
 
