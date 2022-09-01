@@ -27,7 +27,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "contribution guidelines?",
+        message: "Contribution guidelines?",
         name: "guide"
     },
     {
