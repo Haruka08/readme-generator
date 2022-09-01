@@ -37,7 +37,7 @@ const questions = [
     },
     {
         type: "list",
-        message: "Select the licence for your application?",
+        message: "Select the license for your application?",
         name: "license",
         choices:[
         "MIT",

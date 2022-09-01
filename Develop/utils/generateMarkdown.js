@@ -20,15 +20,15 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
   if (data.license == "MIT"){
-    return "(https://opensource.org/licenses/MIT)"
+    return "https://opensource.org/licenses/MIT"
    } else if (data.license == "Apache"){
-    return "(https://opensource.org/licenses/Apache-2.0)"
+    return "https://opensource.org/licenses/Apache-2.0"
    } else if (data.license == "GNU GPL v3"){
-    return "(https://www.gnu.org/licenses/gpl-3.0)"
+    return "https://www.gnu.org/licenses/gpl-3.0"
   } else if (data.license == "BSD 3-Clause License"){
-    return "(https://opensource.org/licenses/BSD-3-Clause)"
+    return "https://opensource.org/licenses/BSD-3-Clause"
   } else if (data.license == "Mozilla Public License 2.0"){
-    return "(https://opensource.org/licenses/MPL-2.0)"
+    return "https://opensource.org/licenses/MPL-2.0"
   } else {
     return ""
   }
